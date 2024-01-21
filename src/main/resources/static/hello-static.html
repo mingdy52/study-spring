@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>static content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+정적 컨텐츠 입니다.
+
+정적 파일은 그냥 static 폴더에 넣고 요청하면 나옴.
+1. http://localhost:8080/hello-static.html 요청
+2. 내장 서버가 스프링 컨테이너에 넘김. 스프링 컨테이너부터 찾아봄.
+3. hello-static 관련 컨트롤러가 없으면 resources: static/hello-static.html 이 있는 찾음.
+4. hello-static.html 응답.
+
+</body>
+</html>
