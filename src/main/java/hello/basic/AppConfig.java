@@ -29,6 +29,11 @@ public class AppConfig {
     call AppConfig.memberService
     call AppConfig.memberRepository
     call AppConfig.orderService
+
+    싱글톤을 유지하기 위해 설정 클래스에 @Configuration을 붙여주는 것은
+    설정 클래스 내 @Bean이 붙은 메서드를 호출할 때 컨테이너에 이미 생성되어 있는 (싱글톤 스코프) 빈이 있는지 살펴보기 위함.
+    강의 -> @Configuration과 싱글톤, @Configuration과 바이트코드 조작의 마법
+
     */
 
     @Bean // 스프링 컨테이너에 등록

@@ -2,7 +2,9 @@ package hello.basic.order;
 
 import hello.basic.discount.DiscountPolicy;
 import hello.basic.member.*;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService {
 
 //    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
