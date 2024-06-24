@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<!--타임리프 템플릿 엔진 선언-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<!--th: 타임리프 템플릿 사용-->
+<p th:text="'안녕하세요. ' + ${data}" >안녕하세요. 손님</p>
+
+<!--
+1. 웹 브라우저에서 요청하면 내장 톰캣 서버에서 스프링한테 요청 url과 일치하는 매핑 정보가 있는지 확인.
+2. url과 매핑 정보가 일치하는 메소드 실행
+3. 모델에 넣어준 데이터 넘겨줌.
+
+참고: spring-boot-devtools 라이브러리를 추가하면, html 파일을 컴파일만 해주면 서버 재시작 없이
+View 파일 변경이 가능하다.
+인텔리J 컴파일 방법: 메뉴 build Recompile
+-->
+</body>
+</html>
