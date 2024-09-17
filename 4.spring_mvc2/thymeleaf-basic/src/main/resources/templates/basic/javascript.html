@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <!-- 자바스크립트 인라인 사용 전 -->
+        <script>
+            var username = [[${user.username}]];
+            // 타입 에러: userA is not defined
+            var age = [[${user.age}]];
+
+            //자바스크립트 내추럴 템플릿
+            var username2 = /*[[${user.username}]]*/ "test username";
+
+            //객체 -> 사용 불가
+            var user = [[${user}]];
+        </script>
+
+        <!-- 자바스크립트 인라인 사용 후 -->
+        <script th:inline="javascript">
+            var username = [[${user.username}]];
+            // 인라인 사용 후 렌더링 결과를 보면 문자 타입인 경우 " 를 포함해준다.
+            var age = [[${user.age}]];
+
+            //자바스크립트 내추럴 템플릿
+            // 자바스크립트에서 문제가 될 수 있는 문자가 포함되어 있으면 이스케이프 처리도 해준다. 예) " \"
+            var username2 = /*[[${user.username}]]*/ "test username";
+
+            //객체 -> 제이슨으로 파싱
+            var user = [[${user}]];
+        </script>
+
+        <!-- 자바스크립트 인라인 each -->
+        <script th:inline="javascript">
+            [# th:each="user, stat : ${users}"]
+                var user[[${stat.count}]] = [[${user}]];
+            [/]
+        </script>
+    </body>
+</html>
