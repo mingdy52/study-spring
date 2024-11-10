@@ -61,7 +61,6 @@ public class ValidationItemApiController {
             참고
                 HttpMessageConverter 단계에서 실패하면 예외가 발생한다.
                 예외 발생시 원하는 모양으로 예외를 처리하는 방법은 예외 처리 부분에서 다룬다.
-
      */
 
 }
