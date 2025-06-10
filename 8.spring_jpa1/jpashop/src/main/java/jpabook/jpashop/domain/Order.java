@@ -22,6 +22,8 @@ public class Order {
     @Column(name = "order_id")
     private Long id;
 
+    // 지연 로딩일 경우, 디비에서 멤버 정보는 안가져옴.
+    // member 객체는 프록시 객체를 넣어놓고 member 객체를 사용할 때 데이터를 가져온다.
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
